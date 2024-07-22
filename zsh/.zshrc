@@ -47,3 +47,13 @@ alias v=nvim
 alias vim=nvim
 alias "cd"="z"
 eval "$(zoxide init zsh)"
+# batdiff() {
+#     git diff --name-only --relative --diff-filter=d | xargs bat --diff
+# }
+alias gd="~/bat-extras/src/batdiff.sh"
+# alias batdiff="~/bat-extras/src/batdiff.sh"
+export PATH="/usr/local/bin:$PATH" >> ~/.zshrc
+export BATDIFF_USE_DELTA=true
+# alias gd='batdiff'
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias py="poetry run python"
