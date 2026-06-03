@@ -1,0 +1,7 @@
+matugen-bin
+matuwall
+pixie-sddm-git
+visual-studio-code-bin
+waybar-git
+waybar-module-pacman-updates-git
+wttrbar
