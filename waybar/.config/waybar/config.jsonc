@@ -1,0 +1,95 @@
+{
+	"layer": "top",
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"margin-top": 15,
+	"spacing": 18,
+	"modules-center": [
+		"sway/window",
+		"clock",
+		"hyprland/workspaces",
+		"pulseaudio",
+		"network"
+	],
+	// "modules-right": ["battery", "clock"],
+	"sway/window": {
+		"max-length": 50
+	},
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"clock": {
+		"interval": 60,
+		"tooltip": false,
+		"format": "{:%H:%M}",
+		"format-alt": "{:%A, %B %d, %Y (%R)}  ",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode": "year",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#ffead3'><b>{}</b></span>",
+				"days": "<span color='#ecc6d9'><b>{}</b></span>",
+				"weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down"
+			// "on-scroll-up": "shift_up",
+			// "on-scroll-down": "shift_down"
+		}
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "󰋎",
+			"phone": "",
+			"phone-muted": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol",
+		"ignored-sinks": ["Easy Effects Sink"]
+	},
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"active": "",
+			"default": ""
+		},
+		"persistent-workspaces": {
+			"*": 5, // 5 workspaces by default on every monitor
+		}
+	},
+	"network": {
+		"interface": "wlan0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} {icon}",
+		"format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected",
+		"max-length": 50
+	}
+}

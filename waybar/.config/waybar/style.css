@@ -1,0 +1,65 @@
+@import "colors.css";
+
+* {
+	all: unset;
+	font-family: "Nunito Sans", "JetBrainsMono Nerd Font Propo", "Noto Sans Mono";
+}
+
+.modules-center {
+	background-color: @background;
+    padding: 3px 18px;
+    border-radius: 99px;
+    min-width: 450px;
+}
+
+tooltip {
+    background-color: @background;
+    padding: 3px 6px;
+    border-radius: 99px;
+}
+
+
+
+#clock {
+    font-weight: 700;
+}
+
+#workspaces {
+    min-width: 150px;
+    background-color: @surface_container;
+    font-size: 0.95rem;
+    padding: 3px 9px;
+    margin: 3px 0;
+    border-radius: 99px;
+}
+
+#workspaces button {
+    background-color: @secondary;
+    padding: 0px 6px;
+    margin: 0 4px;
+    border-radius: 99px;
+    color: @on_secondary;
+    min-width: 1.25rem; 
+    transition: all 0.2s ease-in-out;
+}
+#workspaces button.active {
+    background-color: @primary;
+    color: @on_primary;
+    font-weight: 800;
+    min-width: 1.25rem; 
+    
+    transition: none;
+}
+#pulseaudio {
+    font-size: 0.95rem;
+    padding: 3px 6px;
+    margin: 3px 0;
+    border-radius: 99px;
+}
+
+#network {
+    font-size: 0.95rem;
+    padding: 3px 6px;
+    margin: 3px 0;
+    border-radius: 99px;
+}

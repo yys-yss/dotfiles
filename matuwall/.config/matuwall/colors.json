@@ -1,0 +1,15 @@
+{
+  "window_bg": "rgba(18, 19, 24, 0.58)",
+  "text_color": "#b2c5ff",
+  "header_bg_start": "rgba(18, 19, 24, 0.58)",
+  "header_bg_end": "rgba(18, 19, 24, 0.78)",
+  "backdrop_bg": "rgba(18, 19, 24, 0)",
+  "card_bg": "rgba(192, 198, 221, 0.04)",
+  "card_border": "rgba(192, 198, 221, 0.05)",
+  "card_hover_bg": "rgba(192, 198, 221, 0.08)",
+  "card_hover_border": "rgba(178, 197, 255, 0.2)",
+  "card_selected_bg": "rgba(178, 197, 255, 0.12)",
+  "card_selected_border": "rgba(178, 197, 255, 0.35)",
+  "applied_text": "#b2c5ff",
+  "applied_overlay_bg": "rgba(18, 19, 24, 0.9)"
+}

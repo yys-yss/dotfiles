@@ -1,0 +1,39 @@
+[config]
+
+[config.wallpaper]
+# Whether to set the wallpaper or not
+set = true
+
+command = "awww img --transition-type center {{ image }} --transition-fps 240"
+
+[templates.matuwall]
+input_path = '~/.config/matugen/templates/matuwall-colors.json'
+output_path = '~/.config/matuwall/colors.json'
+
+[templates.waybar]
+input_path = '~/.config/matugen/colors.css'
+output_path = '~/.config/waybar/colors.css'
+post_hook = "bash ~/.config/waybar/scripts/launch.sh"
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors.lua' # If using lua config replace *.conf* with *.lua* at the end
+
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
+output_path = '~/.config/hypr/colors.conf' # If using lua config replace *.conf* with *.lua* at the end
+
+[templates.neovim]
+input_path = '~/.config/matugen/templates/nvim-colors.json'
+output_path = '~/.config/nvim/generated-colors.json'
+# post_hook = 'pkill -SIGUSR1 nvim'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors/matugen.rasi'
+
