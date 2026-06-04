@@ -28,6 +28,9 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 -- Screenshot
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
 
+-- Fullscreen
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
