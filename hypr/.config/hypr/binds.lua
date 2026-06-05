@@ -13,17 +13,17 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(programs.fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd(programs.menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + slash", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/waybar/scripts/launch.sh"))
 
 -- Move focus with mainMod + arrow keys
-hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
 -- Lock screen
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"), { locked = true })
+-- hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"), { locked = true })
 
 -- Screenshot
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m region"))
@@ -38,6 +38,15 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
+
+-- Custom workspaces
+hl.bind(mainMod .. " + T", hl.dsp.focus({ workspace = 1 }))
+hl.bind(mainMod .. " + B", hl.dsp.focus({ workspace = 2 }))
+hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = 3 }))
+hl.bind(mainMod .. " + G", hl.dsp.focus({ workspace = 4 }))
+
+-- Previous workspaces
+hl.bind(mainMod .. " + TAB", hl.dsp.focus({ workspace = "previous" }))
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
