@@ -64,15 +64,15 @@
 		"ignored-sinks": ["Easy Effects Sink"]
 	},
 	"hyprland/workspaces": {
-		"format": "{name}",
+		"format": "{icon}",
 		"on-click": "activate",
 		"format-icons": {
-			"1": "1",
-			"2": "2",
-			"3": "3",
-			"4": "4",
-			"5": "5",
-			"active": "",
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "󰎁",
+			// "active": "",
 			"default": ""
 		},
 		"persistent-workspaces": {
