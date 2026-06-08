@@ -1,5 +1,5 @@
 return {
 	terminal = "kitty",
-	fileManager = "dolphin",
+	fileManager = "thunar",
 	menu = "pkill rofi || bash ~/.config/rofi/launchers/type-4/launcher.sh",
 }
