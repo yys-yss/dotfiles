@@ -49,6 +49,8 @@ hl.config({
 	},
 })
 
+hl.exec_cmd('gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"')
+
 -- Kitty override
 hl.window_rule({
 	match = { class = "^(kitty)$" },
