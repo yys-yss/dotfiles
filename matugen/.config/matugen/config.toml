@@ -4,7 +4,7 @@
 # Whether to set the wallpaper or not
 set = true
 
-command = "awww img --transition-type center {{ image }} --transition-fps 240"
+command = "awww img --transition-type wipe {{ image }} --transition-fps 240 --transition-duration 1"
 
 [templates.matuwall]
 input_path = '~/.config/matugen/templates/matuwall-colors.json'
