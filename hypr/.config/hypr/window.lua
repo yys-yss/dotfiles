@@ -22,6 +22,14 @@ hl.window_rule({
 	no_focus = true,
 })
 
+hl.window_rule({
+	float = true,
+	move = { "cursor_x-(window_w*0.5)", "cursor_y+(window_h*0.1)" },
+	match = {
+		title = "^(.*Network Manager.*)$",
+	},
+})
+
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
 --     name  = "no-anim-overlay",
