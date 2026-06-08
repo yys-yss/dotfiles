@@ -1,37 +1,36 @@
-$WR = WallRizz -n -e -s 81x25 -d $wallpaperDir $themeMode -f "STD.setenv('enableBlur',true)"
-$WallRizz = kitty -1 -o allow_remote_control=yes -o background_opacity=$overlay_window_opacity --title=WallRizz $WR
-$WallRizzRandom = kitty -1 -o allow_remote_control=yes --class=hidden --title=hidden $WR -r
+-- 1. WallRizz Configuration Variables
+local wallpaperDir = "/home/yousef/wallpapers/walls/"
+local overlay_window_opacity = "0.8"
 
-# WallRizz Grid View
-windowrulev2 = float, title:^(WallRizz)$ 
-windowrulev2 = size 70% 70%, title:^(WallRizz)$
-windowrulev2 = animation slide top, title:^(WallRizz)$
-windowrulev2 = dimaround, title:^(WallRizz)$
-windowrulev2 = pin, title:^(WallRizz)$
-windowrulev2 = center 1, title:^(WallRizz)$
-windowrulev2 = bordersize 10, title:^(WallRizz)$
-windowrulev2 = rounding 20, title:^(WallRizz)$
+-- The launch command remains optimized with our 100ms delay fix
+local WR_cmd = string.format(
+	"kitty -o allow_remote_control=yes -o background_opacity=%s --title=WallRizz sh -c 'WallRizz -n -e -d %s -z list --no-enable-pagination'",
+	overlay_window_opacity,
+	wallpaperDir
+)
+local WR_random_cmd = string.format(
+	'kitty -o allow_remote_control=yes --class=hidden --title=hidden sh -c "WallRizz -n -e -d %s -r"',
+	wallpaperDir
+)
 
+-- 2. Ported Window Rules (Re-engineered to neutralize the terminal window)
+hl.window_rule({
+	match = { title = "WallRizz" },
+	float = true,
+	size = "1920 1080", -- Controls the dimensions. Width (60%) is wider than Height (40%).
+	center = true, -- Keeps your new rectangle perfectly centered on screen
+	animation = "slide top", -- Drops down smoothly from the top center
+	-- rounding = 15,
+	-- rounding_power = 2,
+	-- border_size = 0,
+	-- no_shadow = true,
+	-- xray = true,
+})
+-- 3. Keybind Actions
+hl.bind("F3", function()
+	hl.exec_cmd(WR_cmd)
+end)
 
-# WallRizz Array View
-windowrulev2 = float, title:^(WallRizz)$ 
-windowrulev2 = animation slide top, title:^(WallRizz)$
-windowrulev2 = dimaround, title:^(WallRizz)$
-windowrulev2 = pin, title:^(WallRizz)$
-windowrulev2 = center 1, title:^(WallRizz)$
-windowrulev2 = size 70% 30%, title:^(WallRizz)$
-windowrulev2 = bordersize 10, title:^(WallRizz)$
-windowrulev2 = rounding 20, title:^(WallRizz)$
-
-# WallRizz Stack View
-windowrulev2 = float, title:^(WallRizz)$ 
-windowrulev2 = size 363 981, title:^(WallRizz)$
-windowrulev2 = move 80% 5%, title:^(WallRizz)$
-windowrulev2 = animation slide right, title:^(WallRizz)$
-windowrulev2 = dimaround, title:^(WallRizz)$
-windowrulev2 = pin, title:^(WallRizz)$
-windowrulev2 = bordersize 10, title:^(WallRizz)$
-
-# Key binds
-bindd = ,f3, Apply wallpaper preset, exec, $WallRizz
-bindd = $mainMod, f3, Apply random wallpaper, exec, $WallRizzRandom
+hl.bind("SHIFT + F3", function()
+	hl.exec_cmd(WR_random_cmd)
+end)
