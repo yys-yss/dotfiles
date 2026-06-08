@@ -37,3 +37,15 @@ output_path = '~/.config/nvim/generated-colors.json'
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors/matugen.rasi'
 
+[templates.waypaper]
+input_path = '~/.config/matugen/colors.css'
+output_path = '~/.config/waypaper/colors.css'
+
+[templates.zen-websites]
+input_path = '~/.config/matugen/templates/firefox-colors.css'
+output_path = '~/.config/zen/ybwtz3eg.Default (release)/chrome/colors.css'
+
+[templates.zen-browser]
+input_path = '~/.config/matugen/templates/zen-browser-colors.css'
+output_path = '~/.config/zen/ybwtz3eg.Default (release)/chrome/userChrome.css'
+

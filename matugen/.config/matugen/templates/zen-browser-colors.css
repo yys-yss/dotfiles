@@ -1,0 +1,11 @@
+/* ~/.config/matugen/templates/zen.css */
+@namespace url("http://mozilla.org");
+
+:root {
+    --zen-primary-color: {{colors.primary.dark.hex}} !important;
+    --zen-secondary-color: {{colors.secondary.dark.hex}} !important;
+    --zen-browser-background: {{colors.surface.dark.hex}} !important;
+    --zen-colors-tertiary: {{colors.tertiary.dark.hex}} !important;
+    --toolbox-textcolor: {{colors.on_surface.dark.hex}} !important;
+}
+
